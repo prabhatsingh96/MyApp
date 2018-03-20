@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fluper.myapp.StartQuizActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wlcm_text"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text=" YOUR WELCOME "
+        />
+
+    <EditText
+        android:id="@+id/et_question"
+        android:layout_below="@+id/wlcm_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Question is :"
+        />
+    <RadioGroup
+        android:id="@+id/radio_grp"
+        android:layout_below="@+id/et_question"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_btn_answer_one"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_btn_answer_two"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_btn_answer_three"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_btn_answer_four"
+            />
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/radio_grp"
+        android:layout_alignParentRight="true"
+        android:text="Next"
+        android:textColor="#000000"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_green_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/radio_grp"
+        android:layout_alignParentRight="true"
+        android:text="Submit"
+        android:textColor="#000000"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_green_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fluper.myapp.LaunchingActivity">
+
+    <Button
+        android:id="@+id/standardMode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="standardBtn"
+        android:text="Standard Mode" />
+
+    <Button
+        android:id="@+id/singleTop"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="singleTopBtn"
+        android:text="Single Top" />
+
+    <Button
+        android:id="@+id/singleTask"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="singleTaskBtn"
+        android:text="Single Task" />
+
+    <Button
+        android:id="@+id/singleInstance"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="singleInstances"
+        android:text="Single Instance" />
+
+</LinearLayout>

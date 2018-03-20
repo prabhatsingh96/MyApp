@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fluper.myapp.WelcomeQuizActivity">
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="YOUR WElCOME"
+        android:layout_marginTop="40dp"
+        android:textColor="#ff2d36"
+        />
+
+    <Button
+
+        android:id="@+id/btn_start_quiz"
+        android:layout_centerInParent="true"
+        android:textColor="#6130ff"
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Quiz"
+        />
+    <Button
+        android:id="@+id/baseBtn"
+        android:layout_below="@+id/btn_start_quiz"
+        android:text="Drawer"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_below="@+id/baseBtn"
+        android:id="@+id/start_service"
+        android:text="Start Service"
+        android:background="@color/colorAccent"
+        android:textColor="#f2d367"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/baseBtn"
+        android:id="@+id/stop_service"
+        android:text="Stop Service"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/colorAccent"
+        android:textColor="#f2d367"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

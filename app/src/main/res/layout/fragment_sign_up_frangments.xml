@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fluper.myapp.frangments.SignUpFragments">
+
+    <EditText
+        android:id="@+id/et_name"
+        android:hint="Enter Name"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_name"
+        android:layout_marginTop="20dp"
+        android:hint="Enter Email"
+        android:padding="20dp" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:hint="Enter Password"
+        android:padding="20dp"
+        android:layout_below="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_below="@+id/et_password"
+        android:id="@+id/et_contact"
+        android:hint="Enter contact"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/sign_up_btn"
+        android:layout_below="@id/et_contact"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Sign Up"
+        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
