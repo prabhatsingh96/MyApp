@@ -64,8 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.google.android.gms.common.SignInButton
-        android:onClick="signingwithgoogle"
+    <Button
+
         android:id="@+id/signing_with_google"
         android:layout_alignParentRight="true"
         android:text="Signing with google"
