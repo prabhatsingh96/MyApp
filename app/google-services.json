@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "402205780556",
+    "firebase_url": "https://myapp-198611.firebaseio.com",
+    "project_id": "myapp-198611",
+    "storage_bucket": "myapp-198611.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402205780556:android:03626cb7da6204e5",
+        "android_client_info": {
+          "package_name": "com.example.fluper.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402205780556-tkbaqsrvla87ngal3bgmvfm8c7bjjrus.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9VKuQIftlJWczp1Nx5Z4GwFr4TJZ7USw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402205780556-tkbaqsrvla87ngal3bgmvfm8c7bjjrus.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
