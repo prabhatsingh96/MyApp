@@ -29,7 +29,8 @@
         android:layout_height="320dp"
         android:layout_below="@+id/my_application"
         >
-
+        <!--<include layout="@layout/facebook_user_detail_layout"
+            android:id="@+id/in"></include>-->
 
     </RelativeLayout>
     <Button

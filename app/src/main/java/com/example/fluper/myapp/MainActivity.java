@@ -1,11 +1,19 @@
 package com.example.fluper.myapp;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fluper.myapp.appUtil.DbAdapter;
@@ -16,21 +24,40 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+import com.facebook.login.widget.ProfilePictureView;
+import com.squareup.picasso.Picasso;
 
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
     String TAG = "TEST";
     private Button signIn;
+    private LoginButton facebookLogInBtn;
     private DbAdapter adapter;
     private Button signUp;
-    private  Button facebookLogInBtn;
     private  Button googleLogInBtn;
     private CallbackManager callbackManager;
+   /* private ImageView profilePictureView;
+    private LinearLayout infoLayout;
+    private TextView email;
+    private TextView gender;
+    private TextView facebookName;
+    private Bitmap bitmap;*/
+    private static final String EMAIL = "email";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +73,16 @@ public class MainActivity extends AppCompatActivity {
         signIn = findViewById(R.id.sl_btn);
         facebookLogInBtn = findViewById(R.id.facebook_log_in_btn);
         googleLogInBtn = findViewById (R.id.signing_with_google);
+        //RelativeLayout rl = findViewById (R.id.in);
+
+
+
+      /*  email = rl.findViewById(R.id.email);
+        facebookName = (TextView)rl.findViewById(R.id.name);
+        gender = (TextView)rl.findViewById(R.id.gender);
+        infoLayout = (LinearLayout)rl.findViewById(R.id.layout_info);
+        profilePictureView = rl.findViewById(R.id.image);
+*/
 
         android.support.v4.app.FragmentManager  fm = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
@@ -53,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
         ft.commit();
         signIn.setVisibility(View.GONE);
         signUp.setVisibility(View.VISIBLE);
+
+        facebookLogInBtn.setReadPermissions(Arrays.asList(EMAIL));
+        callbackManager = CallbackManager.Factory.create();
 
         facebookLogInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,18 +107,42 @@ public class MainActivity extends AppCompatActivity {
 
 
     //Log in to facebook
-    public void logInToFacebook(){
+    public void logInToFacebook() {
         // faceBookLogInBtn = findViewById(R.id.log_in_with_linkdin);
+        //facebookLogInBtn.setReadPermissions(Arrays.asList(EMAIL));
 
-        callbackManager = CallbackManager.Factory.create();
-        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+        LoginManager.getInstance ().logInWithReadPermissions (this,
+                Arrays.asList (EMAIL));
+
+
+        //callbackManager = CallbackManager.Factory.create();
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
+                // Toast.makeText (MainActivity.this, "log in successfully", Toast.LENGTH_SHORT).show ();
+
+                startActivity (new Intent (MainActivity.this, FacebookWelcomeActivity.class));
 
 
-                Toast.makeText(MainActivity.this, "LogIn Success", Toast.LENGTH_SHORT).show();
+                // Toast.makeText (MainActivity.this, "LogIn Success", Toast.LENGTH_SHORT).show ();
+              /*  GraphRequest request = GraphRequest.newMeRequest(
+                        loginResult.getAccessToken(),
+                        new GraphRequest.GraphJSONObjectCallback() {
 
+                            @Override
+                            public void onCompleted(JSONObject object, GraphResponse response) {
+                                Log.v("Main", response.toString());
+                                setProfileToView(object);
+                            }
+                        });
+                Bundle parameters = new Bundle();
+                parameters.putString("fields", "id,name,email,gender, birthday");
+                request.setParameters(parameters);
+                request.executeAsync();
+            }*/
             }
+
 
             @Override
             public void onCancel() {
@@ -87,13 +151,27 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onError(FacebookException error) {
-                Toast.makeText(MainActivity.this, "error", Toast.LENGTH_SHORT).show();
+            public void onError(FacebookException error)
+            {
+                Toast.makeText(MainActivity.this, "error"+error, Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
+
+   /* private void setProfileToView(JSONObject jsonObject) {
+        try {
+            email.setText(jsonObject.getString("email"));
+            gender.setText(jsonObject.getString("gender"));
+            facebookName.setText(jsonObject.getString("name"));
+          ////  profilePictureView.setPresetSize(ProfilePictureView.NORMAL);
+           // profilePictureView.setProfileId(jsonObject.getString("id"));
+            infoLayout.setVisibility(View.VISIBLE);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }*/
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode,resultCode,data);
