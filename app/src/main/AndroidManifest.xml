@@ -60,7 +60,8 @@
             android:name=".SingleInstancesActivity"
             android:launchMode="singleInstance" />
         <activity android:name=".RetrofitActivity" />
-        <activity android:name=".FacebookWelcomeActivity"></activity>
+        <activity android:name=".FacebookWelcomeActivity" />
+        <activity android:name=".GmailDetailActivity"></activity>
     </application>
 
 </manifest>
